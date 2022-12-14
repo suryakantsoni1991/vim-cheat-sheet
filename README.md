@@ -236,3 +236,188 @@ Please, note some of these commands are not supported by VSCodeVim yet.
 [Vim Visual Block Mode](https://www.youtube.com/watch?v=Ydzw70SvF-g)
 
 [SpaceVim](https://spacevim.org/)
+
+
+My Own findings - 
+
+VIM
+
+/{text}		to select the word to be operated upon
+
+ciw 		change in that word then
+
+N			to move to the next occurrent of the same word
+
+Ci”			change inside quotes
+
+{line}gg		got the line number - {line}
+
+.  (Dot)			repeat the same action which is last done
+
+
+f{char}		to go The the next occurrence of the character in the same line
+
+F{char}		to go to the previous occurrence of the character in the same line
+
+t{char}			to  go to one place before the next occurrence of the character in the same line
+
+T{char}			to go to one place after the previous occurrence of character in them same line
+
+- `w` to move word by word forward
+
+- `b` to move backwards word by word
+
+W, B as above but they will move taking the hypen or special characters/ joining characters ex “email-service” will be taken as one word
+
+- `e` to jump to the end of a word
+- `ge` to jup to the end of the previous word
+
+Similar E and gE work on complete words instead of elementary words
+
+
+After using `f{character}` you can type `;` to go to the next occurrence of the character or `,` to go to the previous one. You can see the `;` and `,` as commands for repeating the last character search.
+
+
+
+- `0`: Moves to the first character of a line
+- `^`: Moves to the first non-blank character of a line
+- `$`: Moves to the end of a line
+- `g_`: Moves to the non-blank character at the end of a line
+
+
+- `}` jumps entire paragraphs downwards
+- `{` similarly but upwards
+- `CTRL-D` lets you move down half a page by scrolling the page
+- `CTRL-U` lets you move up half a page also by scrolling
+
+- `/{pattern}` to search forward
+- `?{pattern}` to search backwards
+		and remember that in order to execute a search you need to press `ENTER` at the end of the command)
+ When the value of pattern in uppercase the search also become case sensitive
+\C{pattern}		to only search for lower case words
+
+
+- `n` to go to the next match
+- `N` to go to the previous match
+
+
+You can use `?{pattern}` to search upwards. Using `?` without a pattern changes the direction of the current search. When changing the direction `n` and `N` also change direction.
+
+Try typing `?` and press `ENTER`. And then come back to this magic `cucumber`.
+
+
+Typing -> `/{function/method}.*`
+
+{char}<dot><asterisk> - this will highlight the complete line which contain the pattern of {char}
+
+{count}{command}
+Counts are numbers which let you multiply the effect of a command:
+
+
+- Use `gd` to **g**o to **d**efinition of whatever is under your cursor.
+- Use `gf` to **g**o to a **f**ile in an import.
+
+
+- Type `gg` to go to the top of the file.
+- Use `{line}gg` to go to a specific line.
+- Use `G` to go to the end of the file.
+- Type `%` jump to matching `({[]})`. - if you are at the start of the bracket then you can jump to the end of bracket and viceversa
+
+
+EDITING -  
+   what to do (delete, change...)
+      /
+     /      how many times
+    /         /
+   v         v
+{operator}{count}{motion}
+                    ^
+                   /
+                  /
+           where to perform
+             the action
+```
+
+Example d2w  will delete two words current and the next
+If you want to delete next 4 words you can type d4w
+
+u - UNDO
+
+CTRL-r REDO
+
+D3/{char} -  I t will search the next occurrences of the char and delete them all
+
+d4j/5dd -  any of these two commands will delete the next 5 lines
+
+CTRL-o   		to go back to the place from where you have jumped like using / or ?
+
+f{char1}dt{char2} 		find char1 and delete till char2
+
+CTRL-J (capital) - to bring the below line into the same line by pressing backspaces effect
+
+REGULAR EXPRESSION SEARCH FOR PARENTHESIS
+
+/\(.*?\)
+
+ci”  change inside double quotes any where in that line
+
+Ci{ 			 Change inside block {
+
+
+diw 		will delete only the word
+
+diw			will delete the beside whitespaces
+
+
+
+gh 				on the function to see the documentation of that function or types or object or variables
+
+ffdt'					find f and delete till ‘
+-----=t--=v----'florkin'--------=
+
+da( 		this will delete th whole parenthesis along with brackets
+
+ci} 			change inside curly braces
+
+:s/<find>/<replace>/<flags> 			substitution
+
+* 		In normal mode  
+* 		⬡  Specify ranges before the s  ⬡ :10,30s/foo/bar  ⬡ :%s/foo/bar/g  
+* 		⬡  Example flags 
+    * 		⬡  g = every occurrence  
+    * 		⬡  c = confirm before applying  
+current line: 			s 
+whole file: 				%s
+ines a-b: 				a,bs 
+line a to end: 			a,$s 
+selected region: 		‘<, ’>s 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
