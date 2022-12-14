@@ -391,6 +391,17 @@ whole file: 				%s
 ines a-b: 				a,bs 
 line a to end: 			a,$s 
 selected region: 		‘<, ’>s 
+	
+	
+## to find and delete a word - 
+	/{regex} and teh go to that word and press dw
+	
+
+	
+
+
+	
+	
 
 
 
